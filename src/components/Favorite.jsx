@@ -2,10 +2,10 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { MdOutlineRemoveCircle } from "react-icons/md";
 import { connect } from "react-redux";
-import { removeFromFavoriteAction } from '../redux/actions';
+import { removeFromFavoriteAction } from "../redux/actions";
 
 const mapStateToProps = (state) => ({
-  favorite: state.favorite.jobs,
+  favorite: state.favorite.jobset,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -21,14 +21,19 @@ const Favourites = ({ favorite, removeFromFavorites }) => {
         <Col sm={12}>
           <ul style={{ listStyle: "none" }}>
             {favorite.map((jobs, i) => (
-              <li key={i} className="my-4">
-                <Button variant="danger" onClick={() => removeFromFavorites(i)}>
-                  <MdOutlineRemoveCircle />
-                </Button>
-                <div>{jobs.title}</div>
-                <div>{jobs.company_name}</div>
-                
-              </li>
+              <div>
+                <li key={i} className="my-4">
+                  <Button
+                    variant="danger"
+                    onClick={() => removeFromFavorites(i)}
+                  >
+                    <MdOutlineRemoveCircle />
+                  </Button>
+                  <span className="mx-5">{jobs.title}</span>
+                  <span className="mx-5">{jobs.company_name}</span>
+                  <span className="mx-5">{jobs.job_type}</span>
+                </li>
+              </div>
             ))}
           </ul>
         </Col>

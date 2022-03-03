@@ -11,11 +11,15 @@ export const removeFromFavoriteAction = (company) => ({
   type: REMOVE_FROM_FAVORITE,
   payload: company,
 });
- export const fetchJobs = ( query) => {
+export const fetchJobs = (query) => {
   return async (dispatch, getState) => {
-    const stateRightNow = getState()
+    const stateRightNow = getState();
     try {
-      const response = await fetch("https://strive-jobs-api.herokuapp.com/jobs?search="+ query + '&limit=15');
+      const response = await fetch(
+        "https://strive-jobs-api.herokuapp.com/jobs?search=" +
+          query +
+          "&limit=15"
+      );
       if (response.ok) {
         const { data } = await response.json();
         dispatch({
@@ -30,4 +34,3 @@ export const removeFromFavoriteAction = (company) => ({
     }
   };
 };
-

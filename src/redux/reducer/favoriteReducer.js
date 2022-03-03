@@ -1,5 +1,5 @@
 import { initialState } from "../store";
-import {ADD_TO_FAVORITE,REMOVE_FROM_FAVORITE} from "../actions";
+import { ADD_TO_FAVORITE, REMOVE_FROM_FAVORITE } from "../actions";
 
 const favoriteReducer = (state = initialState.favorite, action) => {
   switch (action.type) {
