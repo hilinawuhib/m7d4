@@ -8,6 +8,7 @@ import { fetchJobs } from "../redux/actions";
 const mapStateToProps = (state) => ({
   jobsFromReduxStore: state.job.jobset,
 });
+
 const mapDispatchToProps = (dispatch) => ({
   GET_JOBS: (query) => dispatch(fetchJobs(query)),
 });

@@ -2,7 +2,8 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { MdOutlineRemoveCircle } from "react-icons/md";
 import { connect } from "react-redux";
-import { removeFromFavoriteAction } from "../redux/actions";
+import { removeFromFavoriteAction } from '../redux/actions';
+
 const mapStateToProps = (state) => ({
   favorite: state.favorite.jobs,
 });
