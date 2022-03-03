@@ -2,10 +2,7 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import {
-  addToFavoriteAction,
-  removeFromFavoriteAction,
-} from "../redux/actions";
+import { fetchJobs } from "../redux/actions";
 import { connect } from "react-redux";
 import { AiFillHeart } from "react-icons/ai";
 import { BsHeart } from "react-icons/bs";
@@ -15,7 +12,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addToFavorites: (company) => dispatch(addToFavoriteAction(company)),
+  fetch: (company) => dispatch(addToFavoriteAction(company)),
   removeFromFavorites: (company) => dispatch(removeFromFavoriteAction(company)),
 });
 
